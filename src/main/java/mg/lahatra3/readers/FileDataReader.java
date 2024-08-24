@@ -17,12 +17,10 @@ public class FileDataReader implements Supplier<Dataset<Row>>{
     @Override
     public Dataset<Row> get() {
         Dataset<Row> dataset = sparkSession.read()
-            .format("csv")
-            .option("header", true)
-            .option("inferSchema", true)
-            .option("encoding", fileDataSourceConfiguration.getEncoding())
-            .load(fileDataSourceConfiguration.getFilenamePathString());
-        
+           .format("csv")
+           .option("header", true)
+           .option("encoding", fileDataSourceConfiguration.getEncoding())
+           .load(fileDataSourceConfiguration.getFilenamePathString());
         return dataset.repartition(fileDataSourceConfiguration.getNumPartitions());
     }
 

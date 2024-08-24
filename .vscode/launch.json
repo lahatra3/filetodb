@@ -4,7 +4,7 @@
             "type": "java",
             "name": "filetodb",
             "request": "launch",
-            "mainClass": "mg.lahatra3.FileToDb",
+            "mainClass": "mg.lahatra3.FileToDbApplication",
             "projectName": "filetodb",
             "vmArgs": [
                 "--add-opens=java.base/java.lang=ALL-UNNAMED",

@@ -17,7 +17,9 @@
         <postgresql.version>42.7.3</postgresql.version>
         <lombok.version>1.18.34</lombok.version>
         <appassembler-maven-plugin>2.1.0</appassembler-maven-plugin>
-        <mainClass>mg.lahatra3.FileToDb</mainClass>
+        <main.class>mg.lahatra3.FileToDbApplication</main.class>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
     <dependencies>
         <dependency>
@@ -73,7 +75,8 @@
                                 --add-opens=java.base/sun.util.calendar=ALL-UNNAMED
                                 --add-opens=java.security.jgss/sun.security.krb5=ALL-UNNAMED
                             </extraJvmArguments>
-                            <repositoryName>lib</repositoryName>
+                            <repositoryLayout>flat</repositoryLayout>
+                            <repositoryName>libs</repositoryName>
                             <binFileExtensions>
                                 <unix>.sh</unix>
                             </binFileExtensions>
@@ -82,10 +85,13 @@
                             </platforms>
                             <programs>
                                 <program>
-                                    <mainClass>${mainClass}</mainClass>
+                                    <mainClass>${main.class}</mainClass>
                                     <id>${project.name}</id>
                                 </program>
                             </programs>
+                            <copyConfigurationDirectory>true</copyConfigurationDirectory>
+                            <configurationSourceDirectory>src/main/resources</configurationSourceDirectory>
+                            <configurationDirectory>resources</configurationDirectory>
                         </configuration>
                     </execution>
                 </executions>

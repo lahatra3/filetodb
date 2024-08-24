@@ -19,6 +19,8 @@ public class FileToDbRunner implements Runnable {
 
     @Override
     public void run() {
+        long startTime = System.currentTimeMillis();
+
         FileToDbConfiguration fileToDbConfiguration = new FileToDbConfiguration();
         SparkConfiguration sparkConfiguration = fileToDbConfiguration.getSparkConfiguration();
         FileDataSourceConfiguration fileDataSourceConfiguration = fileToDbConfiguration.getFileDataSourceConfiguration();
@@ -49,6 +51,12 @@ public class FileToDbRunner implements Runnable {
 
         JdbcDataWriter jdbcDataWriter = new JdbcDataWriter(jdbcDataSinkConfiguration);
         jdbcDataWriter.accept(transformedDatasetDataConversion);
+
+        sparkSession.close();
+
+        long endTime = System.currentTimeMillis();
+        long durationTime = endTime - startTime;
+        System.out.println(">>> Duration: " + durationTime + " ms...");
     }
 
 }

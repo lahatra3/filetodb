@@ -1,0 +1,13 @@
+{
+  "columns_mapping": {
+    "first_name": "firstname",
+    "last_name": "lastname",
+    "email": "email",
+    "created_at": "creation_date",
+    "status": "status"
+  },
+  "data_conversion": {
+    "creation_date": "TIMESTAMP",
+    "status": "BOOLEAN"
+  }
+}

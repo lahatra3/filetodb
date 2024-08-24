@@ -75,6 +75,7 @@
                                 --add-opens=java.base/sun.util.calendar=ALL-UNNAMED
                                 --add-opens=java.security.jgss/sun.security.krb5=ALL-UNNAMED
                             </extraJvmArguments>
+                            <repositoryLayout>flat</repositoryLayout>
                             <repositoryName>libs</repositoryName>
                             <binFileExtensions>
                                 <unix>.sh</unix>
@@ -88,6 +89,9 @@
                                     <id>${project.name}</id>
                                 </program>
                             </programs>
+                            <copyConfigurationDirectory>true</copyConfigurationDirectory>
+                            <configurationSourceDirectory>src/main/resources</configurationSourceDirectory>
+                            <configurationDirectory>resources</configurationDirectory>
                         </configuration>
                     </execution>
                 </executions>

@@ -21,7 +21,8 @@ public class JdbcDataWriter implements Consumer<Dataset<Row>> {
            .option("password", jdbcDataSinkConfiguration.getPassword())
            .option("dbtable", jdbcDataSinkConfiguration.getDbtable())
            .option("numPartitions", jdbcDataSinkConfiguration.getNumPartitions())
-           .option("batchsize", jdbcDataSinkConfiguration.getBatchSize())
+           .option("batch size", jdbcDataSinkConfiguration.getBatchSize())
+           .mode("append")
            .save();
     }
 

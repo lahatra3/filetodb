@@ -22,7 +22,8 @@ public class TransformationUtils {
          String fileContentString = Files.readString(filenamePath);
          return objectMapper.readValue(
             fileContentString,
-            new TypeReference<Map<String, Map<String, String>>>() {}
+            new TypeReference<>() {
+            }
          );
       } catch (Exception e) {
          throw new RuntimeException(e);

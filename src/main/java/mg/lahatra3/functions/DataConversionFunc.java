@@ -2,7 +2,6 @@ package mg.lahatra3.functions;
 
 import lombok.RequiredArgsConstructor;
 import mg.lahatra3.beans.DatatypeConfiguration;
-import org.apache.hadoop.shaded.com.google.gson.internal.bind.DateTypeAdapter;
 import org.apache.spark.sql.Column;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
@@ -10,7 +9,6 @@ import org.apache.spark.sql.types.DataType;
 import org.apache.spark.sql.types.DataTypes;
 
 import java.util.Map;
-import java.util.Objects;
 import java.util.function.UnaryOperator;
 import java.util.stream.Collectors;
 

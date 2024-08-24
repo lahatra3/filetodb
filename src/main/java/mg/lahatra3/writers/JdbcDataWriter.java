@@ -15,13 +15,14 @@ public class JdbcDataWriter implements Consumer<Dataset<Row>> {
     @Override
     public void accept(Dataset<Row> dataset) {
         dataset.write()
-            .format("jdbc")
-            .option("user", jdbcDataSinkConfiguration.getUser())
-            .option("password", jdbcDataSinkConfiguration.getPassword())
-            .option("dbtable", jdbcDataSinkConfiguration.getDbtable())
-            .option("numPartitions", jdbcDataSinkConfiguration.getNumPartitions())
-            .option("batchsize", jdbcDataSinkConfiguration.getBatchSize())
-            .save();
+           .format("jdbc")
+           .option("url", jdbcDataSinkConfiguration.getJdbcUrl())
+           .option("user", jdbcDataSinkConfiguration.getUser())
+           .option("password", jdbcDataSinkConfiguration.getPassword())
+           .option("dbtable", jdbcDataSinkConfiguration.getDbtable())
+           .option("numPartitions", jdbcDataSinkConfiguration.getNumPartitions())
+           .option("batchsize", jdbcDataSinkConfiguration.getBatchSize())
+           .save();
     }
 
 }

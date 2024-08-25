@@ -1,0 +1,13 @@
+services:
+  filetodb:
+    build: ../
+    image: filetodb
+    container_name: local_filetodb
+    env_file: filetodb/docker.env
+    volumes:
+      - ./filetodb/data:/app/data
+    restart: on-failure
+    networks:
+      - lahatrad_network
+networks:
+  lahatrad_network:

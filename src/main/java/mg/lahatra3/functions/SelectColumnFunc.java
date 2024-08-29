@@ -18,7 +18,8 @@ public class SelectColumnFunc implements UnaryOperator<Dataset<Row>> {
       }
       String[] columns = columnsMapping
          .entrySet()
-         .parallelStream().map(Map.Entry::getValue)
+         .parallelStream()
+         .map(Map.Entry::getValue)
          .toArray(String[]::new);
       return dataset.selectExpr(columns);
    }

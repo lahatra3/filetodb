@@ -18,7 +18,7 @@ public class ConfigurationUtils {
     public static final String DATA_SINK_BATCH_SIZE = Env4jUtils.get("DATA_SINK_BATCH_SIZE", DEFAULT_BATCH_SIZE);
     public static final String DATA_SOURCE_DATE = Env4jUtils.get("DATE_SOURCE_DATE", DEFAULT_DATE);
     public static final String DATA_SOURCE_FILENAME_PATH = Env4jUtils.get("DATA_SOURCE_FILENAME_PATH")
-       .replaceAll("<date>", DATA_SOURCE_DATE);
+       .replace("<date>", DATA_SOURCE_DATE);
     public static final String DATA_SOURCE_ENCODING = Env4jUtils.get("DATA_SOURCE_ENCODING", DEFAULT_ENCODING);
     public static final String DATA_SOURCE_NUM_PARTITIONS = Env4jUtils.get("DATA_SOURCE_NUM_PARTITIONS", DEFAULT_NUM_PARTITIONS);
     public static final Map<String, Map<String, String>> DATA_TRANSFORMATIONS = TransformationUtils.get();
